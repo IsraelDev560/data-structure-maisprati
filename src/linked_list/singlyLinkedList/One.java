@@ -54,7 +54,6 @@ public class One {
             indexCurrent++;
             previous = current;
             current = current.next;
-
         }
         if(current == null){
             throw new RuntimeException("Index out of bounds");

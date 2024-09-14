@@ -9,9 +9,13 @@ package linked_list.singlyLinkedList;
 
 import linked_list.Node;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedMap;
+
 public class Two {
     private Node head;
-    private final int quantidadeMaxima = 2;
+    private final int quantidadeMaxima = 3;
     private int quantidade;
 
     public Two(){
@@ -31,7 +35,7 @@ public class Two {
             this.quantidade = 1;
         } else{
             if(quantidade == quantidadeMaxima){
-                System.out.println("Quantidade maxima alcançada, removendo a primeira URL "+ newNode.data);
+                System.out.println("Quantidade maxima alcançada, removendo a primeira URL: "+ this.head.data);
                 this.head = this.head.next;
                 quantidade--;
             }
@@ -40,7 +44,58 @@ public class Two {
                 current = current.next;
             }
             current.next = newNode;
+            System.out.println("Adicionando URL: " +newNode.data);
             quantidade++;
         }
     }
+
+    public void removeUrl(int index){
+        if (isEmpty()){
+            throw new RuntimeException("Lista vazia");
+        }
+        if(index == 0){
+            Object removed = this.head;
+            this.head = this.head.next;
+            System.out.println("Removendo: " + removed);
+            return;
+        }
+        Node previous = null;
+        Node current = this.head;
+        int indexCurrent = 0;
+        while (current != null){
+            if(indexCurrent == index){
+                previous.next = current.next;
+                System.out.println("Removendo URL: " + current.data);
+                break;
+            }
+            indexCurrent++;
+            previous = current;
+            current = current.next;
+        }
+        if(current == null){
+            throw new RuntimeException("Index out of bounds");
+        }
+    }
+
+    public void listUrl(){
+        List<Node> list = new ArrayList<>();
+        if(isEmpty()){
+            throw new RuntimeException("Lista Vazia");
+        } else {
+            Node current = this.head;
+            while (current != null){
+                list.add(current);
+                current = current.next;
+            }
+            for (Node item : list){
+                System.out.print("URL: " + item.data);
+                if (item.next == null){
+                    System.out.println();
+                } else{
+                    System.out.print(" -> ");
+                }
+            }
+        }
+    }
+
 }
