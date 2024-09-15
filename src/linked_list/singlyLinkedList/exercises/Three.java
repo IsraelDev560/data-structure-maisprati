@@ -1,11 +1,11 @@
-package linked_list.singlyLinkedList;
+package linked_list.singlyLinkedList.exercises;
 /*
 3. Implemente um sistema de controle de reversão (undo) para uma aplicação de edição de texto.
    Use uma lista simplesmente encadeada para armazenar as ações realizadas e permita que o usuário
    desfaça as últimas ações.
 */
 
-import linked_list.Node;
+import linked_list.singlyLinkedList.Node;
 
 import java.util.ArrayList;
 import java.util.List;

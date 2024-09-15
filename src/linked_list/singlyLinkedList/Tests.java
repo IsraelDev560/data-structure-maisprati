@@ -1,4 +1,4 @@
-package linked_list;
+package linked_list.singlyLinkedList;
 /*
 Lista de comandos ONE:
  - isEmpty(); - Verifica se a lista está vazia.
@@ -26,9 +26,7 @@ Lista de comandos THREE:
 */
 
 
-import linked_list.singlyLinkedList.One;
-import linked_list.singlyLinkedList.Three;
-import linked_list.singlyLinkedList.Two;
+import linked_list.singlyLinkedList.exercises.Three;
 
 public class Tests {
     public static void main(String[] args) {

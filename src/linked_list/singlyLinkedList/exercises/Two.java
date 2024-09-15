@@ -1,4 +1,4 @@
-package linked_list.singlyLinkedList;
+package linked_list.singlyLinkedList.exercises;
 
 /*
 2. Crie uma aplicação que simule o histórico de navegação de um navegador
@@ -7,11 +7,10 @@ package linked_list.singlyLinkedList;
    um certo tamanho.
  */
 
-import linked_list.Node;
+import linked_list.singlyLinkedList.Node;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedMap;
 
 public class Two {
     private Node head;

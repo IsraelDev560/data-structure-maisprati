@@ -1,11 +1,11 @@
-package linked_list.singlyLinkedList;
+package linked_list.singlyLinkedList.exercises;
 
 /*
 1. Implemente um gerenciador de tarefas onde cada tarefa é um nó em uma lista simplesmente encadeada.
    Permita que o usuário adicione, remova, e marque tarefas como concluídas.
 */
 
-import linked_list.Node;
+import linked_list.singlyLinkedList.Node;
 
 import java.util.ArrayList;
 import java.util.List;
