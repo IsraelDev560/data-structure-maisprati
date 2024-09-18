@@ -12,9 +12,11 @@ import java.util.List;
 
 public class Three {
     private Node head;
+    private Node current;
 
     public Three(){
         this.head = null;
+        this.current = null;
     }
 
     public boolean isEmpty(){
@@ -26,12 +28,14 @@ public class Three {
         if(isEmpty()){
             this.head = newNode;
             System.out.println("Adicionando... "+ newNode.data);
+            this.current = newNode;
         } else{
             Node current = this.head;
             while (current.next != null){
                 current = current.next;
             }
             current.next = newNode;
+            this.current = newNode;
             System.out.println("Adicionando... " + newNode.data);
         }
     }
@@ -40,22 +44,28 @@ public class Three {
         if (isEmpty()) {
             throw new RuntimeException("Listá vazia.");
         }
-        if(this.head.next == null){
-            this.head = null;
+        if(this.current == this.head){
+            System.out.println("Estamos no início da lista");
             return;
         }
         Node current = this.head;
-        while (current.next.next != null){
+        while (current.next != this.current){
             current = current.next;
         }
-        System.out.println("Desfazendo: " + current.next.data);
+        this.current = current;
         current.next = null;
+        System.out.println("Voltando para... "+this.current.data);
     }
 
     public void removeText(int index){
         if (isEmpty()){
             throw new RuntimeException("Lista vazia.");
         }
+
+        if (index < 0) {
+            throw new IllegalArgumentException("Índice inválido.");
+        }
+
         if(index == 0){
             Object removedData = this.head.data;
             this.head = this.head.next;

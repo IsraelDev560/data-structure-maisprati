@@ -1,12 +1,12 @@
 package linked_list.doublyLinkedList;
 
-public class Node { ;
-    public String data;
-    public Node next, previous;
+public class Node<T> { ;
+    public T data;
+    public Node<T> next, previous;
 
-    public Node(String data){
-        this.previous = null;
+    public Node(T data){
         this.data = data;
+        this.previous = null;
         this.next = null;
     }
 }

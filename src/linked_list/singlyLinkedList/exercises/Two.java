@@ -52,6 +52,11 @@ public class Two {
         if (isEmpty()){
             throw new RuntimeException("Lista vazia");
         }
+
+        if (index < 0) {
+            throw new IllegalArgumentException("Índice inválido.");
+        }
+
         if(index == 0){
             Object removed = this.head;
             this.head = this.head.next;
