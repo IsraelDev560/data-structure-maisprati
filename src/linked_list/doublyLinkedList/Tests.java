@@ -29,7 +29,7 @@ public class Tests {
         five.addLetter("Rei");
         five.addLetter("Rainha");
         five.list();
-        five.reorganizeToFront(1);
+        five.reorganize(2);
         five.list();
     }
 }

@@ -25,17 +25,15 @@ public class Five<T> {
         Node<T> newNode = new Node<>(data);
         if(isEmpty()){
             this.head = newNode;
-            this.current = newNode;
             System.out.println("Adicionando... " + newNode.data);
         } else {
-            Node<T> current = this.head;
-            while (current.next != null){
-                current = current.next;
+            Node<T> lastNode = this.head;
+            while (lastNode.next != null){
+                lastNode = lastNode.next;
             }
-            current.next = newNode;
-            newNode.previous = current;
-            this.current = newNode;
-            System.out.println("Adicionando... "+ current.data);
+            lastNode.next = newNode;
+            newNode.previous = lastNode;
+            System.out.println("Adicionando... "+ newNode.data);
         }
     }
 
@@ -70,29 +68,24 @@ public class Five<T> {
         }
     }
 
-    public void reorganizeToFront(int index){
+    public void reorganize(int index){
         if (isEmpty()){
             throw new RuntimeException("Lista vazia.");
         }
         Node<T> current = this.head;
-        Node<T> temp = this.current;
         int indexCurrent = 0;
         while (current != null){
             if(index == indexCurrent){
-                current.previous.next = current.next;
-                current.next.previous = current.previous;
-                current.next = head;
-                head.previous = current;
-                break;
+               current = current.next;
             }
-        indexCurrent++;
-        this.head = current;
+            current = current.next;
+            indexCurrent++;
         }
     }
 
     public void list(){
         Node<T> list = this.head;
-        while (list != null){
+        while (list != null ){
             System.out.print(list.data);
             if(list.next == null){
                 System.out.println();
