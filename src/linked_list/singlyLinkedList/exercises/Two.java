@@ -30,7 +30,7 @@ public class Two {
         Node newNode = new Node(data);
         if(isEmpty()){
             this.head = newNode;
-            System.out.println("Adicionando.. " +newNode.data);
+            System.out.println("Adicionando URL: " +newNode.data);
             this.quantidade = 1;
         } else{
             if(quantidade == quantidadeMaxima){
@@ -50,6 +50,7 @@ public class Two {
 
     public void removeUrl(int index){
         if (isEmpty()){
+            this.quantidade = 0;
             throw new RuntimeException("Lista vazia");
         }
 
@@ -75,6 +76,7 @@ public class Two {
             indexCurrent++;
             previous = current;
             current = current.next;
+            quantidade--;
         }
         if(current == null){
             throw new RuntimeException("Index out of bounds");

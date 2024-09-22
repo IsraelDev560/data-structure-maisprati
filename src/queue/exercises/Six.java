@@ -1,6 +1,11 @@
 package queue.exercises;
 
-import linked_list.doublyLinkedList.Node;
+import queue.Node;
+
+/*
+    6. Crie um simulador de fila de atendimento em um banco. Utilize uma fila para gerenciar os clientes que aguardam
+    atendimento e implemente a lógica para chamar o próximo cliente.
+*/
 
 public class Six {
     private Node first;
@@ -15,9 +20,9 @@ public class Six {
         return this.first == null;
     }
 
-    public void enqueue(String data){
+    public void add(String data){
         Node newNode = new Node(data);
-        if(this.last == null){
+        if(isEmpty()){
             this.first = newNode;
             this.last = newNode;
             System.out.println(newNode.data + " Está Entrando na fila");
@@ -28,8 +33,8 @@ public class Six {
         }
     }
 
-    public String dequeue(){
-        if(this.first == null){
+    public void callNext(){
+        if(isEmpty()){
             throw new RuntimeException("Lista vazia");
         }
 
@@ -39,8 +44,6 @@ public class Six {
         if(this.first == null){
             this.last = null;
         }
-
-        return data;
     }
 
     public void list(){

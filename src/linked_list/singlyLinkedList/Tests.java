@@ -27,6 +27,7 @@ Lista de comandos THREE:
 
 
 import linked_list.singlyLinkedList.exercises.Three;
+import linked_list.singlyLinkedList.exercises.Two;
 
 public class Tests {
     public static void main(String[] args) {
@@ -39,22 +40,24 @@ public class Tests {
 //        one.taskCompleted(2);
 //        one.listTasks();
 
-//        Two two = new Two();
-//        two.addUrl("1");
-//        two.addUrl("2");
-//        two.addUrl("3");
-//        two.addUrl("4");
-//        two.listUrl();
-//        two.removeUrl(2);
-//        two.listUrl();
+        Two two = new Two();
+        two.addUrl("1");
+        two.addUrl("2");
+        two.addUrl("3");
+        two.addUrl("4");
+        two.listUrl();
+        two.removeUrl(2);
+        two.listUrl();
+        two.addUrl("5");
+        two.listUrl();
 
-        Three three = new Three();
-        three.addText("Texto 1");
-        three.addText("Texto 12");
-        three.addText("Texto 423");
-        three.undo();
-        three.listTexts();
-        three.removeText(0);
-        three.listTexts();
+//        Three three = new Three();
+//        three.addText("Texto 1");
+//        three.addText("Texto 12");
+//        three.addText("Texto 423");
+//        three.undo();
+//        three.listTexts();
+//        three.removeText(0);
+//        three.listTexts();
     }
 }
