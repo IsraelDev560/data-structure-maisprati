@@ -10,18 +10,16 @@ import linked_list.doublyLinkedList.Node;
 
 public class Five<T> {
     private Node<T> head;
-    private Node<T> current;
 
     public Five(){
         this.head = null;
-        this.current = null;
     }
 
     public boolean isEmpty(){
         return this.head == null;
     }
 
-    public void addLetter(T data){
+    public void addElement(T data){
         Node<T> newNode = new Node<>(data);
         if(isEmpty()){
             this.head = newNode;
@@ -37,7 +35,7 @@ public class Five<T> {
         }
     }
 
-    public void removeLetter(int index){
+    public void removeElement(int index){
         if (isEmpty()){
             throw new RuntimeException("Lista vazia");
         }
@@ -68,18 +66,17 @@ public class Five<T> {
         }
     }
 
-    public void reorganize(int index){
+    public void reorganize(){
         if (isEmpty()){
             throw new RuntimeException("Lista vazia.");
         }
         Node<T> current = this.head;
-        int indexCurrent = 0;
-        while (current != null){
-            if(index == indexCurrent){
-               current = current.next;
-            }
-            current = current.next;
-            indexCurrent++;
+        while (current != null && current.next != null){
+            Node<T> nextNode = current.next;
+            T temp = current.data;
+            current.data = nextNode.data;
+            nextNode.data = temp;
+            current = nextNode.next;
         }
     }
 
